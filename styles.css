@@ -167,10 +167,11 @@ p.top-text{
 }
 #main{
     grid-area: main;
+    /* height: 100%; */
     background-color: rgb(221, 225, 225);
     display: grid;
-    grid-template: max-content 1fr max-content auto/ 1fr max-content;
-    padding: 30px 25px 50px 15px;
+    grid-template: max-content auto max-content 1fr/ 1fr max-content;
+    padding: 30px 25px 40px 15px;
     gap: 20px 20px;
 }
  .trending-title{
@@ -191,13 +192,10 @@ p.top-text{
     padding: 20px 25px;
     font-size: .9rem;
  }
- .notes h3, .notes p{
-    margin: 10px 0;
-    color: gray;
- }
  .notes h3{
     font-size: 1.15rem;
     color: black;
+    margin: 10px 0;
  }
  .notes{
     border-bottom: 1px solid gray;
@@ -221,16 +219,52 @@ p.top-text{
 .users:last-child{
     margin: 0;
 }
-.users p{
+.light-gray{
     margin: 10px 0;
     color: gray;
 }
 .users p:first-child{
     font-weight: bold;
     color: black;
+    margin: 10px 0;
 }
 #project-cards{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    grid-auto-rows: 1fr;
+    min-width: 315px;
+    grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+    grid-auto-rows: max-content;
+    gap: 30px;
+    overflow: auto;
+    align-content: space-between;
+}
+.card{
+    border-left: 10px solid orange;
+    border-radius: 10px;
+    padding: 20px ;
+    background-color: white;
+    height: 215px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 0 5px 1px #c6c2c2;
+}
+.card h3{
+    margin: 10px 0;
+}
+.button-icons{
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 10px;
+}
+.button-icons button{
+    appearance: none;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+}
+@media(min-width: 1945px){
+    #project-cards{
+        align-content: unset;
+    }
 }
